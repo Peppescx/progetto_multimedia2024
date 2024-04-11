@@ -1,0 +1,3 @@
+/home/ubuntu/Scrivania/progetto/node script/video/CMakeFiles/videostabKalman.dir
+/home/ubuntu/Scrivania/progetto/node script/video/CMakeFiles/edit_cache.dir
+/home/ubuntu/Scrivania/progetto/node script/video/CMakeFiles/rebuild_cache.dir

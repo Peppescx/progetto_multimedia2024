@@ -1,0 +1,111 @@
+ <!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+<header class="d-flex flex-wrap align-items-center justify-content-center  py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none" id="title">
+     	 Progetto Multimedia
+        </a>
+      </div>
+
+   <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="doc.html" class="nav-link">Documentazione</a></li>
+        <li class="nav-item"><a class="nav-link" href="info.html">Info</a></li>
+      </ul>
+
+     
+    </header>
+    
+    <div class="container">
+
+    
+<form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
+	<div class="d-flex flex-row mb-3">
+	  <div class="p-2"><input type="file" class="form-control" name="sampleFile" id="video-preview" placeholder="sdsd"/></div>
+	  <div class="p-2"><input type='button' onClick="SubForm()" value="Carica" id="button_upload" class="btn btn-primary"/></div>
+	  <div class="p-2" id="p-2"><video id="video" width="320" height="240" controls style="display: none; "></video></div>
+	</div>
+	<div class="d-flex flex-row mb-3">
+	 <div class="p-2">
+		<select class="form-select" aria-label="Default select example" id="algoritmo">
+			<option selected value="1">Videostab</option>
+			<option value="2">Videostab con Kalman</option>
+			<option value="3">Vidstab python</option>
+		</select>
+	 </div>
+	</div>
+
+</form> 
+
+
+<div id="list">
+<div class="d-flex flex-column">
+
+  	<div class="d-flex flex-row mb-3 loadlist">
+	  	<div class="p-3">	<span class="sr-only" id="c1">Caricamento in corso</span></div>
+		<div class="p-4"> 
+			<input class="form-check-input" type="checkbox" onclick="return false;" value="" id="c1" style="display:none" checked/>
+			<div class="timer-display-id">
+				<p id="timer">00:00 </p>
+			</div>
+		 	<div class="spinner-border text-primary" role="status" id="c1" ></div></div>
+		 </div>
+	
+
+  	<div class="d-flex flex-row mb-3 loadlist">
+	  	<div class="p-3">	<span class="sr-only" id="c2">Stabilizzazione in corso</span></div>
+		<div class="p-4"> 
+			<input class="form-check-input" type="checkbox" onclick="return false;" value="" id="c2" style="display:none" checked/>
+			<div class="timer-display-id">
+				<p id="timer2">00:00:00 </p>
+			</div>
+		 	<div class="spinner-border text-primary" role="status" id="c2" ></div></div>
+		 </div>
+	
+  
+  	<div class="d-flex flex-row mb-3 loadlist">
+	  	<div class="p-3">	<span class="sr-only" id="c3">Codifica in corso</span></div>
+		<div class="p-4"> 
+			<input class="form-check-input" type="checkbox" onclick="return false;" value="" id="c3" style="display:none" checked/>
+			<div class="timer-display-id">
+				<p id="timer3">00:00 </p>
+			</div>
+		 	<div class="spinner-border text-primary" role="status" id="c3" ></div></div>
+		 </div>
+	
+	</div>
+
+</div>
+
+
+	<video id="video_out" width="100%" height="100%" controls style="display: none;"></video>
+	
+	<div  id="grafi">
+	<div class="d-flex flex-row mb-3">
+		Plot
+	</div>
+		<div class="d-flex flex-row mb-3">
+			<div class="p-2"> <img  class="img-fluid" id="img1"> </div>
+			<div class="p-2"><img  class="img-fluid" id="img2"></div>
+		</div>
+	</div>
+	
+
+
+
+    </div>
+   <script  src="/js/home.js"></script>   
+</body>
+
+</html> 
