@@ -1,5 +1,5 @@
 CMakeFiles/videostabKalman.dir/videostabKalman.cpp.o: \
- /home/ubuntu/Scrivania/progetto/node\ script/video/videostabKalman.cpp \
+ /home/ubuntu/Scrivania/progetto\ git/progetto_multimedia2024/node\ script/video/videostabKalman.cpp \
  /usr/include/stdc-predef.h /usr/local/include/opencv4/opencv2/opencv.hpp \
  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/local/include/opencv4/opencv2/core.hpp \

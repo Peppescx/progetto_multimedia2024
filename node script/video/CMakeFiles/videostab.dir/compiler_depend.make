@@ -424,20 +424,8 @@ CMakeFiles/videostab.dir/videostab.cpp.o: videostab.cpp \
   /usr/include/c++/11/fstream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
-  /usr/include/c++/11/bits/fstream.tcc \
-  /usr/include/c++/11/filesystem \
-  /usr/include/c++/11/bits/fs_fwd.h \
-  /usr/include/c++/11/bits/fs_path.h \
-  /usr/include/c++/11/codecvt \
-  /usr/include/c++/11/bits/fs_dir.h \
-  /usr/include/c++/11/bits/fs_ops.h
+  /usr/include/c++/11/bits/fstream.tcc
 
-
-/usr/include/c++/11/bits/fs_ops.h:
-
-/usr/include/c++/11/bits/fs_dir.h:
-
-/usr/include/c++/11/filesystem:
 
 /usr/include/c++/11/bits/fstream.tcc:
 
@@ -833,8 +821,6 @@ CMakeFiles/videostab.dir/videostab.cpp.o: videostab.cpp \
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
-/usr/include/c++/11/bits/fs_path.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
@@ -1097,8 +1083,6 @@ videostab.cpp:
 
 /usr/include/c++/11/bits/vector.tcc:
 
-/usr/include/c++/11/codecvt:
-
 /usr/include/c++/11/bits/streambuf.tcc:
 
 /usr/include/string.h:
@@ -1166,8 +1150,6 @@ videostab.cpp:
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
-/usr/include/c++/11/bits/fs_fwd.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 

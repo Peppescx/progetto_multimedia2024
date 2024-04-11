@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/Scrivania/progetto/node script/video
+# Install script for directory: /home/ubuntu/Scrivania/progetto git/progetto_multimedia2024/node script/video
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ubuntu/Scrivania/progetto/node script/video/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/Scrivania/progetto git/progetto_multimedia2024/node script/video/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

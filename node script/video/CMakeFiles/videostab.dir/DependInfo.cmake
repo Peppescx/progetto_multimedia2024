@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/Scrivania/progetto/node script/video/videostab.cpp" "CMakeFiles/videostab.dir/videostab.cpp.o" "gcc" "CMakeFiles/videostab.dir/videostab.cpp.o.d"
+  "/home/ubuntu/Scrivania/progetto git/progetto_multimedia2024/node script/video/videostab.cpp" "CMakeFiles/videostab.dir/videostab.cpp.o" "gcc" "CMakeFiles/videostab.dir/videostab.cpp.o.d"
   )
 
 # Targets to which this target links.

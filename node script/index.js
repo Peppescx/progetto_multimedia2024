@@ -97,12 +97,12 @@ function elabora(str,folder,socket,algorithm){
 	switch(algorithm){
 	 case "1":{ 
 	 	console.log("Elaboro video con il primo algoritmo da "+socket.id);
-	 	a="./video/videostab "+str;
+	 	a="./video/videostab "+"'"+str+"'";
 	 	break;
 	 	}
 	 case "2": {
 		console.log("Elaboro video con il secondo algoritmo da "+socket.id);
-		a="./video/videostabKalman "+str;
+		a="./video/videostabKalman "+"'"+str+"'";
 		break;
 		}
 	 case "3":{console.log("Elaboro video con il terzo algoritmo da "+socket.id);
@@ -110,7 +110,7 @@ function elabora(str,folder,socket,algorithm){
 	 	break;
 	 	}
 	default:{console.log("Elaboro video con il primo algoritmo da "+socket.id);
-	 	a="./video/videostab "+str;
+	 	a="./video/videostab "+"'"+str+"'";
 	 	break;}
 	}
 	
@@ -131,7 +131,7 @@ function elabora(str,folder,socket,algorithm){
 				
 				return;
 			});
-			
+				//console.log(`stdout: ${stdout}`); 	
 			
 		    }
 		});		

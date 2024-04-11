@@ -18,11 +18,13 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include <cassert>
 #include <cmath>
 #include <fstream>
+//#include "matplotlib.h"
 
-#include <filesystem>
 
 using namespace std;
 using namespace cv;
+namespace fs = std::filesystem;
+//namespace plt = matplotlibcpp;
 
 // This video stablisation smooths the global trajectory using a sliding average window
 
@@ -63,6 +65,17 @@ struct Trajectory
     double a; // angle
 };
 
+string SplitFilename (const string& str)
+{
+  size_t found;
+  cout << "Splitting: " << str << endl;
+  found=str.find_last_of("/\\");
+  cout << " folder: " << str.substr(0,found) << endl;
+  cout << " file: " << str.substr(found+1) << endl;
+  return str.substr(0,found);
+}
+
+
 int main(int argc, char **argv)
 {
     if(argc < 2) {
@@ -70,38 +83,18 @@ int main(int argc, char **argv)
         return 0;
     }
 
-    auto path =filesystem::current_path(); //getting path
-    string s=path;
-    cout<<" old path "<<s<<endl;
-    
-    
-    filesystem::current_path(s+"/video/"); //setting path	
-    cout<<" current path "<<filesystem::current_path()<<endl;
-  
-    string stringa1=argv[1];
-    string stringa2=argv[2];
-    
-    string directory=stringa1+" "+stringa2;
-    cout<<"directory "<<directory<<endl;
-   // cout<<"directory di lavoro"<<directory.replace(stringa1.begin(),stringa1.end()," ")<<endl;
-    
-  
-   filesystem::path dir1(directory);
-   string dir = dir1.parent_path().string(); // "/home/dir1/dir2/dir3/dir4"
-   string file = dir1.filename().string(); // "file"
-   filesystem::current_path(dir);
-      cout<<" current path "<<filesystem::current_path() <<"provo ad aprire il file "<<file<<endl;
-  
-  
-     
+	 
+    string path=SplitFilename(argv[1]);
+    cout<<" current path "<<path<<endl;
+ 
+ 
     // For further analysis
-    ofstream out_transform("prev_to_cur_transformation.txt");
-    ofstream out_trajectory("trajectory.txt");
-    ofstream out_smoothed_trajectory("smoothed_trajectory.txt");
-    ofstream out_new_transform("new_prev_to_cur_transformation.txt");
+    ofstream out_transform(path+"/prev_to_cur_transformation.txt");
+    ofstream out_trajectory(path+"/trajectory.txt");
+    ofstream out_smoothed_trajectory(path+"/smoothed_trajectory.txt");
+    ofstream out_new_transform(path+"/new_prev_to_cur_transformation.txt");
 
-  //  VideoCapture cap(argv[1]);
-    VideoCapture cap(file);
+   VideoCapture cap(argv[1]);
     assert(cap.isOpened());
 
     Mat cur, cur_grey;
@@ -241,6 +234,7 @@ int main(int argc, char **argv)
         new_prev_to_cur_transform.push_back(TransformParam(dx, dy, da));
 
         out_new_transform << (i+1) << " " << dx << " " << dy << " " << da << endl;
+        	//Splt::plot(dx,dy,da);
     }
 
     // Step 5 - Apply the new transformation to the video
@@ -257,7 +251,7 @@ int main(int argc, char **argv)
   int frame_height = cap.get(cv::CAP_PROP_FRAME_HEIGHT);
   int fps= cap.get(cv::CAP_PROP_FPS);
   
-VideoWriter video("outcpp.avi",cv::VideoWriter::fourcc('M','J','P','G'),fps, Size(frame_width,frame_height));
+VideoWriter video(path+"/outcpp.avi",cv::VideoWriter::fourcc('M','J','P','G'),fps, Size(frame_width,frame_height));
 
 //VideoWriter video("outcpp.mp4",cv::VideoWriter::fourcc('v','p','8','0'),fps, Size(frame_width,frame_height));
  // check if we succeeded
@@ -334,7 +328,7 @@ VideoWriter video("outcpp.avi",cv::VideoWriter::fourcc('M','J','P','G'),fps, Siz
     }
     
 
-	
+
 	    
 
 

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/ubuntu/Scrivania/progetto/node script/video"
+CMAKE_SOURCE_DIR = "/home/ubuntu/Scrivania/progetto git/progetto_multimedia2024/node script/video"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/ubuntu/Scrivania/progetto/node script/video"
+CMAKE_BINARY_DIR = "/home/ubuntu/Scrivania/progetto git/progetto_multimedia2024/node script/video"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/ubuntu/Scrivania/progetto/node script/video/CMakeFiles" "/home/ubuntu/Scrivania/progetto/node script/video//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/ubuntu/Scrivania/progetto git/progetto_multimedia2024/node script/video/CMakeFiles" "/home/ubuntu/Scrivania/progetto git/progetto_multimedia2024/node script/video//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/ubuntu/Scrivania/progetto/node script/video/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/ubuntu/Scrivania/progetto git/progetto_multimedia2024/node script/video/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named videostab
+
+# Build rule for target.
+videostab: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 videostab
+.PHONY : videostab
+
+# fast build rule for target.
+videostab/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/videostab.dir/build.make CMakeFiles/videostab.dir/build
+.PHONY : videostab/fast
+
+#=============================================================================
 # Target rules for targets named videostabKalman
 
 # Build rule for target.
@@ -128,6 +141,30 @@ videostabKalman: cmake_check_build_system
 videostabKalman/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/videostabKalman.dir/build.make CMakeFiles/videostabKalman.dir/build
 .PHONY : videostabKalman/fast
+
+videostab.o: videostab.cpp.o
+.PHONY : videostab.o
+
+# target to build an object file
+videostab.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/videostab.dir/build.make CMakeFiles/videostab.dir/videostab.cpp.o
+.PHONY : videostab.cpp.o
+
+videostab.i: videostab.cpp.i
+.PHONY : videostab.i
+
+# target to preprocess a source file
+videostab.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/videostab.dir/build.make CMakeFiles/videostab.dir/videostab.cpp.i
+.PHONY : videostab.cpp.i
+
+videostab.s: videostab.cpp.s
+.PHONY : videostab.s
+
+# target to generate assembly for a file
+videostab.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/videostab.dir/build.make CMakeFiles/videostab.dir/videostab.cpp.s
+.PHONY : videostab.cpp.s
 
 videostabKalman.o: videostabKalman.cpp.o
 .PHONY : videostabKalman.o
@@ -161,7 +198,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... videostab"
 	@echo "... videostabKalman"
+	@echo "... videostab.o"
+	@echo "... videostab.i"
+	@echo "... videostab.s"
 	@echo "... videostabKalman.o"
 	@echo "... videostabKalman.i"
 	@echo "... videostabKalman.s"
