@@ -18,12 +18,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include <cassert>
 #include <cmath>
 #include <fstream>
-//#include "matplotlib.h"
 
 
 using namespace std;
 using namespace cv;
-namespace fs = std::filesystem;
+
 //namespace plt = matplotlibcpp;
 
 // This video stablisation smooths the global trajectory using a sliding average window
@@ -234,7 +233,7 @@ int main(int argc, char **argv)
         new_prev_to_cur_transform.push_back(TransformParam(dx, dy, da));
 
         out_new_transform << (i+1) << " " << dx << " " << dy << " " << da << endl;
-        	//Splt::plot(dx,dy,da);
+        	
     }
 
     // Step 5 - Apply the new transformation to the video
