@@ -1,5 +1,5 @@
 var socket = io();
-reset();
+reset()
 function SubForm (){
   reset();
   $("#list").css("display","block");
@@ -24,6 +24,11 @@ function mandavideo(folder){
 	socket.emit("elaboravideo",folder,algorithm);
 }
 
+var counter1=0;
+var counter2=0;
+var counter3=0;
+var interval1,interval2,interval3;
+
 socket.on("ricevi", (folder) => {
 	stop("timer3");
 	$(".timer-display-id").css("display","inline-block");
@@ -34,11 +39,9 @@ socket.on("ricevi", (folder) => {
 	let img1 = document.getElementById("img1");
 	let img2 = document.getElementById("img2");
 	let grafi= document.getElementById("grafi");
-	if(algorithm==3){
 	img1.src="/trajectory?folder="+folder;
 	img2.src="/transforms?folder="+folder;
 	grafi.style.display = "inline-flex";
-	}
 	video_out.src = "/algo?folder="+folder;
 	video_out.style.display = "block";
 	video_out.play();
@@ -75,6 +78,16 @@ function reset(){
 	$("span#c3").text("Encoding in corso");
 	$("input#c3").css("display","none");
 	$("div#c3").css("display","inline-block");
+	$(".timer-display-id").css("display","block");
+	stop("timer1");
+	stop("timer2");
+	stop("timer3");
+	 counter1=0;
+	 counter2=0;
+	 counter3=0;
+	document.getElementById("timer").innerHTML = convertSec(counter1);
+	document.getElementById("timer2").innerHTML = convertSec(counter1);
+	document.getElementById("timer3").innerHTML = convertSec(counter1);
 }
      
 document.getElementById("video-preview").addEventListener("change", function() {
@@ -114,10 +127,7 @@ function convertSec(cnt) {
 	}
 }
 
-let counter1=0;
-let counter2=0;
-let counter3=0;
-let interval1,interval2,interval3;
+
 
 function start(timer) {
 ret=document.getElementById(timer);

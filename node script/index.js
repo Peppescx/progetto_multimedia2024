@@ -120,19 +120,29 @@ function elabora(str,folder,socket,algorithm){
 		return;
 		}else{ 
 			socket.emit("stabilizzato");
-			a="ffmpeg -i '"+folder+"/input.mp4' -i '"+folder+"/outcpp.avi' -vsync 2  -filter_complex hstack '"+folder+"/output.mp4'";		
-			var comando2= exec(a, (error, stdout, stderr) =>{
+			b="ffmpeg -i '"+folder+"/input.mp4' -i '"+folder+"/outcpp.avi' -vsync 2  -filter_complex hstack '"+folder+"/output.mp4'";		
+			var comando2= exec(b, (error, stdout, stderr) =>{
 				if (error) {
 				console.log(`stderr: ${stderr}`); 
 					
 				}else{
-					socket.emit("ricevi",folder);
+					if(algorithm==1 || algorithm == 2){
+						c="python3 'video/plot.py' '"+str+"' "+algorithm;
+						var comando3= exec(c, (error, stdout, stderr) =>{
+							if (error) {
+								console.log(`stderr: ${stderr}`); 	
+							}
+							socket.emit("ricevi",folder);
+						});
+					}else{
+						socket.emit("ricevi",folder);
+					}
+					
 				}
 				
 				return;
 			});
 				//console.log(`stdout: ${stdout}`); 	
-			
 		    }
 		});		
 }
