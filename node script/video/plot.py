@@ -119,7 +119,7 @@ def main(argv):
 		    da1 = [float(line.split()[3]) for line in lines]
 		    #print(str(x)+" "+str(y))
 		    plot_trajectory(x,y,avg_x,avg_y,folder,title)
-		    plot_transforms(dx,dy,a,folder,title)
+		    plot_transforms(dx1,dy1,da1,folder,title)
 
 
 
